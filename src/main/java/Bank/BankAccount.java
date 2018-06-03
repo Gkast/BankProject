@@ -27,7 +27,7 @@ public final class BankAccount implements BankActions {
 
             showMessageDialog(null,
                     String.format("You don't have enough money to withdraw that amount %s %s",
-                            titleGender, lastName), "", ERROR_MESSAGE);
+                            titleGender, lastName), "Not Enough Money to Withdraw", ERROR_MESSAGE);
 
         } else {
 

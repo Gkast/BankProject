@@ -1,18 +1,18 @@
-package ActionTools;
+package ChoiceTools;
 
 import static javax.swing.JOptionPane.*;
 
-public final class PaymentChoice implements PaymentMethod {
+public final class PaymentChooser implements ChoiceReader {
 
     @Override
-    public String method() {
+    public String paymentMethod() {
 
         int choice;
         String paymentChoice;
 
         choice = showConfirmDialog(null,
                 "Do you want to pay your loan with cash?", "Payment Method",
-                YES_NO_CANCEL_OPTION, INFORMATION_MESSAGE);
+                YES_NO_CANCEL_OPTION, QUESTION_MESSAGE);
 
         switch (choice) {
 
@@ -23,7 +23,7 @@ public final class PaymentChoice implements PaymentMethod {
             case NO_OPTION:
                 choice = showConfirmDialog(null,
                         "Do you want to pay your loan from balance?", "Payment Method",
-                        YES_NO_CANCEL_OPTION, INFORMATION_MESSAGE);
+                        YES_NO_CANCEL_OPTION, QUESTION_MESSAGE);
 
                 switch (choice) {
 

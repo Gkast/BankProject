@@ -1,11 +1,17 @@
 import ActionTools.ActionListener;
 import Bank.BankAccount;
 
+import javax.swing.*;
+
 import static javax.swing.JOptionPane.*;
 
 public final class App {
 
     public static void main(String[] args) {
+
+        JLabel welcomeLabel = new JLabel("Welcome to our bank", SwingConstants.CENTER);
+
+        showMessageDialog(null, welcomeLabel, "Welcome", PLAIN_MESSAGE);
 
         String firstName;
         String lastName;

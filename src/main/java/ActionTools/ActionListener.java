@@ -1,6 +1,7 @@
 package ActionTools;
 
 import Bank.BankAccount;
+import ChoiceTools.PaymentChooser;
 
 import static javax.swing.JOptionPane.*;
 
@@ -15,11 +16,14 @@ public final class ActionListener implements ActionListen {
 
             String optionInput;
 
-            optionInput = showInputDialog(null, "Type <<withdraw>> to withdraw money\n"
-                            + "Type <<deposit>> to deposit money\n" + "Type <<check balance>> to check your balance\n"
-                            + "Type <<loan>> to get a loan\n" + "Type <<pay loan>> to pay your loan\n"
-                            + "Type <<check dept>> to pay your dept\n" + "Type <<exit>> to exit the application\n",
-                    "Choose your action", INFORMATION_MESSAGE);
+            optionInput = showInputDialog(null, "• Type <<withdraw>> to withdraw money\n"
+                            + "• Type <<deposit>> to deposit money\n"
+                            + "• Type <<check balance>> to check your balance\n"
+                            + "• Type <<loan>> to get a loan\n"
+                            + "• Type <<pay loan>> to pay your loan\n"
+                            + "• Type <<check dept>> to pay your dept\n"
+                            + "• Type <<exit>> to exit the application\n",
+                    "Choose your action", QUESTION_MESSAGE);
 
             if (optionInput == null)
                 throw new NullPointerException();
@@ -56,7 +60,7 @@ public final class ActionListener implements ActionListen {
 
                     if (account.checkDept() != 0) {
                         String choice;
-                        choice = new PaymentChoice().method();
+                        choice = new PaymentChooser().paymentMethod();
 
                         switch (choice) {
 
